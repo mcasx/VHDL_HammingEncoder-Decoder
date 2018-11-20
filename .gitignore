@@ -1,0 +1,4 @@
+*
+!.gitignore
+!CombinatorialEncoder/*.vhdl
+!SerializedDecoder/*.vhdl
