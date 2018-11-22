@@ -1,6 +1,6 @@
 *
 !.gitignore
-!CombinatorialEncoder/*.vhdl
+!CombinationalEncoder/*.vhdl
 !SerializedDecoder/*.vhdl
-!CombinatorialEncoder/*.vhd
+!CombinationalEncoder/*.vhd
 !SerializedDecoder/*.vhd
