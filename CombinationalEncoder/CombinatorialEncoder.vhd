@@ -17,7 +17,7 @@ ARCHITECTURE combinatorialFunction OF CombinatorialEncoder IS
     );
 	END COMPONENT;
 
-	signal m1_m11, m3_m4, m6_m7, m8_m9, m10_m11, m8_m9_m10_m11, m2_m9, m4_m5, m4_m5_m2_m9, m1_m11_m2, m1_m11_m3_m4, m2_m3_m4, m5_m6_m7: std_logic;
+	signal m1_m11, m3_m4, m6_m7, m8_m9, m10_m11, m8_m9_m10_m11, m2_m9, m4_m5, m4_m5_m2_m9, m1_m11_m2, m1_m11_m3_m4, m2_m3_m4, m5_m6_m7, m6_m7_m10: std_logic;
 BEGIN
 
 	xor1: m_xor PORT MAP (m1, m11, m1_m11);
@@ -36,7 +36,8 @@ BEGIN
 	
 	--x2
 	xor12:m_xor PORT MAP (m1_m11, m3_m4, m1_m11_m3_m4);
-	xor13:m_xor PORT MAP (m1_m11_m3_m4, m6_m7, x2);
+	xor13:m_xor PORT MAP (m10, m6_m7, m6_m7_m10);
+	xor18:m_xor PORT MAP (m1_m11_m3_m4, m6_m7_m10, x2);
 	
 	--x3
 	xor14:m_xor PORT MAP (m2, m3_m4, m2_m3_m4);
