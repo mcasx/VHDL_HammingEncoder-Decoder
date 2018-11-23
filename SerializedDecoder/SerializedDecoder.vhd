@@ -53,10 +53,10 @@ ARCHITECTURE iterativeFunction OF SerializedDecoder IS
 	
 BEGIN
 
-	s_line1 <= y and q1;
-	s_line2 <= y and q2;
-	s_line3 <= y and q3;
-	s_line4 <= y and q4;
+	s_line1 <= y and s_q1;
+	s_line2 <= y and s_q2;
+	s_line3 <= y and s_q3;
+	s_line4 <= y and s_q4;
 	
 	
 	xor1: m_xor PORT MAP(s_line1, s_q1, s_d1);

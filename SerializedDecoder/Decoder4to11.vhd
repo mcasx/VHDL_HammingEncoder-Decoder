@@ -9,7 +9,7 @@ ENTITY Decoder4to11 IS
 END Decoder4to11;
 
 ARCHITECTURE combinatorialFunction OF Decoder4to11 IS
-	signal s1, s2, s3, s4, s5, s6, s7: in std_logic;
+	signal s1, s2, s3, s4, s5, s6, s7: std_logic;
 BEGIN
 	s1 <= not i3 and not i4;
 	s2 <= i3 and not i4;

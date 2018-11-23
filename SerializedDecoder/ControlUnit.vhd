@@ -1,4 +1,7 @@
+LIBRARY decoder;
+
 LIBRARY ieee;
+LIBRARY storage;
 USE ieee.std_logic_1164.all;
 
 ENTITY ControlUnit IS
@@ -9,26 +12,58 @@ ENTITY ControlUnit IS
 END ControlUnit;
 
 ARCHITECTURE behavior OF ControlUnit IS
-	constant word1: std_logic_vector(10 downto 0) = "110110101010001";
-	constant word2: std_logic_vector(10 downto 0) = "101101100110010";
-	constant word3: std_logic_vector(10 downto 0) = "011100011110100";
-	constant word4: std_logic_vector(10 downto 0) = "000011111111000";
+	signal s1, q1: std_logic_vector(3 downto 0) := "0000";
 	
-	signal s1, q1: std_logic := '0';
 BEGIN
-	storage1: storage
+	flipFlop1: storage.flipFlopDSimul
 	port map(
-		clk => clk;
-		D => s1;
-		nSet => '0';
-		nReset => '0';
-		Q => q1
+		clk => clk,
+		D => s1(0),
+		nSet => '0',
+		nRst => '0',
+		Q => q1(0)
 	);
 	
-	adder: FourBitsFullAdder
+	flipFlop2: storage.flipFlopDSimul
 	port map(
-		a => q1;
-		b => '0001';
-		x => s1;
+		clk => clk,
+		D => s1(1),
+		nSet => '0',
+		nRst => '0',
+		Q => q1(1)
 	);
+	
+	flipFlop3: storage.flipFlopDSimul
+	port map(
+		clk => clk,
+		D => s1(2),
+		nSet => '0',
+		nRst => '0',
+		Q => q1(2)
+	);
+	
+	flipFlop4: storage.flipFlopDSimul
+	port map(
+		clk => clk,
+		D => s1(3),
+		nSet => '0',
+		nRst => '0',
+		Q => q1(3)
+	);
+	
+	memory: decoder.ROM
+	port map(
+		index => q1,
+		line1 => line1,
+		line2 => line2,
+		line3 => line3,
+		line4 => line4
+	);
+	
+	adder: decoder.OneAdder
+	port map(
+		a => q1,
+		x => s1
+	);
+	
 END behavior;

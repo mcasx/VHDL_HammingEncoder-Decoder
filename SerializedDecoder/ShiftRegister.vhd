@@ -1,4 +1,5 @@
 LIBRARY ieee;
+LIBRARY storage;
 USE ieee.std_logic_1164.all;
 
 ENTITY ShiftRegister IS
@@ -11,102 +12,102 @@ END ShiftRegister;
 ARCHITECTURE behavior OF ShiftRegister IS
 		signal q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11: std_logic;
 BEGIN
-	storage1: storage
+	flipFlopDSimul1: storage.flipFlopDSimul
 	port map(
-		clk => clk;
-		D => m;
-		nSet => '0';
-		nReset => '0';
+		clk => clk,
+		D => m,
+		nSet => '0',
+		nRst => '0',
 		Q => q1
 	);
 	
-	storage2: storage
+	flipFlopDSimul2: storage.flipFlopDSimul
 	port map(
-		clk => clk;
-		D => q1;
-		nSet => '0';
-		nReset => '0';
+		clk => clk,
+		D => q1,
+		nSet => '0',
+		nRst => '0',
 		Q => q2
 	);
 	
-	storage3: storage
+	flipFlopDSimul3: storage.flipFlopDSimul
 	port map(
-		clk => clk;
-		D => q2;
-		nSet => '0';
-		nReset => '0';
+		clk => clk,
+		D => q2,
+		nSet => '0',
+		nRst => '0',
 		Q => q3
 	);
 	
-	storage4: storage
+	flipFlopDSimul4: storage.flipFlopDSimul
 	port map(
-		clk => clk;
-		D => q3;
-		nSet => '0';
-		nReset => '0';
+		clk => clk,
+		D => q3,
+		nSet => '0',
+		nRst => '0',
 		Q => q4
 	);
 	
-	storage5: storage
+	flipFlopDSimul5: storage.flipFlopDSimul
 	port map(
-		clk => clk;
-		D => q4;
-		nSet => '0';
-		nReset => '0';
+		clk => clk,
+		D => q4,
+		nSet => '0',
+		nRst => '0',
 		Q => q5
 	);
 	
-	storage6: storage
+	flipFlopDSimul6: storage.flipFlopDSimul
 	port map(
-		clk => clk;
-		D => q5;
-		nSet => '0';
-		nReset => '0';
+		clk => clk,
+		D => q5,
+		nSet => '0',
+		nRst => '0',
 		Q => q6
 	);
 	
-	storage7: storage
+	flipFlopDSimul7: storage.flipFlopDSimul
 	port map(
-		clk => clk;
-		D => q6;
-		nSet => '0';
-		nReset => '0';
+		clk => clk,
+		D => q6,
+		nSet => '0',
+		nRst => '0',
 		Q => q7
 	);
 	
-	storage8: storage
+	flipFlopDSimul8: storage.flipFlopDSimul
 	port map(
-		clk => clk;
-		D => q7;
-		nSet => '0';
-		nReset => '0';
+		clk => clk,
+		D => q7,
+		nSet => '0',
+		nRst => '0',
 		Q => q8
 	);
 	
-	storage9: storage
+	flipFlopDSimul9: storage.flipFlopDSimul
 	port map(
-		clk => clk;
-		D => q8;
-		nSet => '0';
-		nReset => '0';
+		clk => clk,
+		D => q8,
+		nSet => '0',
+		nRst => '0',
 		Q => q9
 	);
 	
-	storage10: storage
+	flipFlopDSimul10: storage.flipFlopDSimul
 	port map(
-		clk => clk;
-		D => q9;
-		nSet => '0';
-		nReset => '0';
+		clk => clk,
+		D => q9,
+		nSet => '0',
+		nRst => '0',
 		Q => q10
 	);
 	
-	storage11: storage
+	flipFlopDSimul11: storage.flipFlopDSimul
 	port map(
-		clk => clk;
-		D => q10;
-		nSet => '0';
-		nReset => '0';
+		clk => clk,
+		D => q10,
+		nSet => '0',
+		nRst => '0',
 		Q => q11
 	);
 	

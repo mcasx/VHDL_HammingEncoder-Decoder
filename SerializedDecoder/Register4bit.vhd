@@ -1,4 +1,6 @@
 LIBRARY ieee;
+LIBRARY storage;
+
 USE ieee.std_logic_1164.all;
 
 ENTITY Register4Bit IS
@@ -11,39 +13,39 @@ END Register4Bit;
 ARCHITECTURE behavior OF Register4Bit IS
 		
 BEGIN
-	storage1: storage
+	flipFlopDSimul1: storage.flipFlopDSimul
 	port map(
-		clk => clk;
-		D => d1;
-		nSet => '0';
-		nReset => rst;
+		clk => clk,
+		D => d1,
+		nSet => '0',
+		nRst => rst,
 		Q => q1
 	);
 	
-	storage2: storage
+	flipFlopDSimul2: storage.flipFlopDSimul
 	port map(
-		clk => clk;
-		D => d2;
-		nSet => '0';
-		nReset => rst;
+		clk => clk,
+		D => d2,
+		nSet => '0',
+		nRst => rst,
 		Q => q2
 	);
 	
-	storage3: storage
+	flipFlopDSimul3: storage.flipFlopDSimul
 	port map(
-		clk => clk;
-		D => d3;
-		nSet => '0';
-		nReset => rst;
+		clk => clk,
+		D => d3,
+		nSet => '0',
+		nRst => rst,
 		Q => q3
 	);
 	
-	storage4: storage
+	flipFlopDSimul4: storage.flipFlopDSimul
 	port map(
-		clk => clk;
-		D => d4;
-		nSet => '0';
-		nReset => rst;
+		clk => clk,
+		D => d4,
+		nSet => '0',
+		nRst => rst,
 		Q => q3
 	);
 	
