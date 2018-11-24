@@ -1,5 +1,4 @@
 LIBRARY decoder;
-
 LIBRARY ieee;
 LIBRARY storage;
 USE ieee.std_logic_1164.all;

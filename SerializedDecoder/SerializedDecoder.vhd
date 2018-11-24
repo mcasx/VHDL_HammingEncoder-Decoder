@@ -64,7 +64,7 @@ BEGIN
 	xor3: m_xor PORT MAP(s_line3, s_q3, s_d3);
 	xor4: m_xor PORT MAP(s_line4, s_q4, s_d4);
 	
-	reg: Register4Bit PORT MAP(s_line1, s_line2, s_line3, s_line4, clk, s_rst, s_q1, s_q2, s_q3, s_q4);
+	reg: Register4Bit PORT MAP(s_d1, s_d2, s_d3, s_d4, clk, s_rst, s_q1, s_q2, s_q3, s_q4);
 	
 	decoder: Decoder4to11 PORT MAP(s_q1, s_q2, s_q3, s_q4, s_o1, s_o2, s_o3, s_o4, s_o5, s_o6, s_o7, s_o8, s_o9, s_o10, s_o11);
 	

@@ -1,5 +1,5 @@
-LIBRARY ieee;
 LIBRARY storage;
+LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
 ENTITY ShiftRegister IS
@@ -16,8 +16,8 @@ BEGIN
 	port map(
 		clk => clk,
 		D => m,
-		nSet => '0',
-		nRst => '0',
+		nSet => '1',
+		nRst => '1',
 		Q => q1
 	);
 	
@@ -25,8 +25,8 @@ BEGIN
 	port map(
 		clk => clk,
 		D => q1,
-		nSet => '0',
-		nRst => '0',
+		nSet => '1',
+		nRst => '1',
 		Q => q2
 	);
 	
@@ -34,8 +34,8 @@ BEGIN
 	port map(
 		clk => clk,
 		D => q2,
-		nSet => '0',
-		nRst => '0',
+		nSet => '1',
+		nRst => '1',
 		Q => q3
 	);
 	
@@ -43,8 +43,8 @@ BEGIN
 	port map(
 		clk => clk,
 		D => q3,
-		nSet => '0',
-		nRst => '0',
+		nSet => '1',
+		nRst => '1',
 		Q => q4
 	);
 	
@@ -52,8 +52,8 @@ BEGIN
 	port map(
 		clk => clk,
 		D => q4,
-		nSet => '0',
-		nRst => '0',
+		nSet => '1',
+		nRst => '1',
 		Q => q5
 	);
 	
@@ -61,8 +61,8 @@ BEGIN
 	port map(
 		clk => clk,
 		D => q5,
-		nSet => '0',
-		nRst => '0',
+		nSet => '1',
+		nRst => '1',
 		Q => q6
 	);
 	
@@ -70,8 +70,8 @@ BEGIN
 	port map(
 		clk => clk,
 		D => q6,
-		nSet => '0',
-		nRst => '0',
+		nSet => '1',
+		nRst => '1',
 		Q => q7
 	);
 	
@@ -79,8 +79,8 @@ BEGIN
 	port map(
 		clk => clk,
 		D => q7,
-		nSet => '0',
-		nRst => '0',
+		nSet => '1',
+		nRst => '1',
 		Q => q8
 	);
 	
@@ -88,8 +88,8 @@ BEGIN
 	port map(
 		clk => clk,
 		D => q8,
-		nSet => '0',
-		nRst => '0',
+		nSet => '1',
+		nRst => '1',
 		Q => q9
 	);
 	
@@ -97,8 +97,8 @@ BEGIN
 	port map(
 		clk => clk,
 		D => q9,
-		nSet => '0',
-		nRst => '0',
+		nSet => '1',
+		nRst => '1',
 		Q => q10
 	);
 	
@@ -106,8 +106,8 @@ BEGIN
 	port map(
 		clk => clk,
 		D => q10,
-		nSet => '0',
-		nRst => '0',
+		nSet => '1',
+		nRst => '1',
 		Q => q11
 	);
 	
