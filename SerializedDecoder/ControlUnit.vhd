@@ -67,6 +67,6 @@ BEGIN
 		x => s1
 	);
 	
-	ready <= not q1(0) and q1(1) and q1(2) and q1(3);
+	ready <= q1(0) and q1(1) and q1(2) and q1(3);
 	reset <= q1(0) and q1(1) and q1(2) and q1(3);
 END behavior;

@@ -6,6 +6,7 @@ ENTITY SerializedDecoder IS
         y, clk: in std_logic;
         m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11: out std_logic;
 		  d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11: out std_logic;
+		  q1, q2, q3, q4: out std_logic;
 		  a_rst: in std_logic;
 		  reset: out std_logic;
 		  ready: out std_logic
@@ -98,16 +99,21 @@ BEGIN
 	out_xor11: m_xor PORT MAP(s_o11, s_shift_o11, m11);
 	
 	d1 <= s_o1;
-d2 <= s_o2;
-d3 <= s_o3;
-d4 <= s_o4;
-d5 <= s_o5;
-d6 <= s_o6;
-d7 <= s_o7;
-d8 <= s_o8;
-d9 <= s_o9;
-d10 <= s_o10;
-d11 <= s_o11;
+	d2 <= s_o2;
+	d3 <= s_o3;
+	d4 <= s_o4;
+	d5 <= s_o5;
+	d6 <= s_o6;
+	d7 <= s_o7;
+	d8 <= s_o8;
+	d9 <= s_o9;
+	d10 <= s_o10;
+	d11 <= s_o11;
+	
+	q1 <= s_q1;
+	q2 <= s_q2;
+	q3 <= s_q3;
+	q4 <= s_q4;
 	
 	
 	--x1 <= (m1_m11 xor m2) xor ((m4 xor m5) xor (m2 xor m9));
