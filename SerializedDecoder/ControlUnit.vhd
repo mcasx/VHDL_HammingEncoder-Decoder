@@ -7,7 +7,7 @@ ENTITY ControlUnit IS
     PORT (
         clk: in std_logic;
         line1, line2, line3, line4: out std_logic;
-		  finished: out std_logic;
+		  ready: out std_logic;
 		  reset: out std_logic
     );
 END ControlUnit;
@@ -54,7 +54,7 @@ BEGIN
 	
 	memory: decoder.ROM
 	port map(
-		index => q1,
+		index => s1,
 		line1 => line1,
 		line2 => line2,
 		line3 => line3,
@@ -67,6 +67,6 @@ BEGIN
 		x => s1
 	);
 	
-	finished <= not q1(0) and q1(1) and q1(2) and q1(3);
+	ready <= not q1(0) and q1(1) and q1(2) and q1(3);
 	reset <= q1(0) and q1(1) and q1(2) and q1(3);
 END behavior;
