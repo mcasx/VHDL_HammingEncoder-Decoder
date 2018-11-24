@@ -13,15 +13,15 @@ ENTITY ControlUnit IS
 END ControlUnit;
 
 ARCHITECTURE behavior OF ControlUnit IS
-	signal s1, q1: std_logic_vector(3 downto 0) := "0000";
-	
+	signal s1, q1: std_logic_vector(3 downto 0) := "1111";
+	signal s_reset: std_logic;
 BEGIN
 	flipFlop1: storage.flipFlopDSimul
 	port map(
 		clk => clk,
 		D => s1(0),
-		nSet => '0',
-		nRst => '0',
+		nSet => '1',
+		nRst => not s_reset,
 		Q => q1(0)
 	);
 	
@@ -29,8 +29,8 @@ BEGIN
 	port map(
 		clk => clk,
 		D => s1(1),
-		nSet => '0',
-		nRst => '0',
+		nSet => '1',
+		nRst => not s_reset,
 		Q => q1(1)
 	);
 	
@@ -38,8 +38,8 @@ BEGIN
 	port map(
 		clk => clk,
 		D => s1(2),
-		nSet => '0',
-		nRst => '0',
+		nSet => '1',
+		nRst => not s_reset,
 		Q => q1(2)
 	);
 	
@@ -47,8 +47,8 @@ BEGIN
 	port map(
 		clk => clk,
 		D => s1(3),
-		nSet => '0',
-		nRst => '0',
+		nSet => '1',
+		nRst => not s_reset,
 		Q => q1(3)
 	);
 	
@@ -67,6 +67,7 @@ BEGIN
 		x => s1
 	);
 	
-	finished <= q1(0) and q1(1) and q1(2) and q1(3);
-	reset <= not q1(0) and not q1(1) and not q1(2) and not q1(3);
+	finished <= not q1(0) and q1(1) and q1(2) and q1(3);
+	s_reset <= q1(0) and q1(1) and q1(2) and q1(3);
+	reset <= s_reset;
 END behavior;
