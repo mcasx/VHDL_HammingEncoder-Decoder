@@ -11,11 +11,11 @@ END Decoder4to11;
 ARCHITECTURE combinatorialFunction OF Decoder4to11 IS
 	signal s1, s2, s3, s4, s5, s6, s7: std_logic;
 BEGIN
-	s1 <= not in3 and not in4;
-	s2 <= in3 and not in4;
-	s3 <= in4 and not in3;
-	s4 <= in1 and in2;
-	s5 <= in1 and not in2;
+	s1 <= in3 and not in4;
+	s2 <= not in3 and not in4;
+	s3 <= in1 and not in2;
+	s4 <= in4 and not in3;
+	s5 <= in1 and in2;
 	s6 <= in2 and not in1;
 	s7 <= not in1 and not in2;
 	
