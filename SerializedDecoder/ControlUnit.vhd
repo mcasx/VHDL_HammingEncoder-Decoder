@@ -21,7 +21,7 @@ BEGIN
 		clk => clk,
 		D => s1(0),
 		nSet => '1',
-		nRst => not s_reset,
+		nRst => '1',
 		Q => q1(0)
 	);
 	
@@ -30,7 +30,7 @@ BEGIN
 		clk => clk,
 		D => s1(1),
 		nSet => '1',
-		nRst => not s_reset,
+		nRst => '1',
 		Q => q1(1)
 	);
 	
@@ -39,7 +39,7 @@ BEGIN
 		clk => clk,
 		D => s1(2),
 		nSet => '1',
-		nRst => not s_reset,
+		nRst => '1',
 		Q => q1(2)
 	);
 	
@@ -48,7 +48,7 @@ BEGIN
 		clk => clk,
 		D => s1(3),
 		nSet => '1',
-		nRst => not s_reset,
+		nRst => '1',
 		Q => q1(3)
 	);
 	
@@ -68,6 +68,5 @@ BEGIN
 	);
 	
 	finished <= not q1(0) and q1(1) and q1(2) and q1(3);
-	s_reset <= q1(0) and q1(1) and q1(2) and q1(3);
-	reset <= s_reset;
+	reset <= q1(0) and q1(1) and q1(2) and q1(3);
 END behavior;
