@@ -12,10 +12,10 @@ ENTITY ROM IS
 END ROM;
 
 ARCHITECTURE behavior OF ROM IS
-	constant word1: std_logic_vector(14 downto 0) := "110110101010001";
-	constant word2: std_logic_vector(14 downto 0) := "101101100110010";
-	constant word3: std_logic_vector(14 downto 0) := "011100011110100";
-	constant word4: std_logic_vector(14 downto 0) := "000011111111000";
+	constant word1: std_logic_vector(0 to 14) := "110110101011000";
+	constant word2: std_logic_vector(0 to 14) := "101101100110100";
+	constant word3: std_logic_vector(0 to 14) := "011100011110010";
+	constant word4: std_logic_vector(0 to 14) := "000011111110001";
 	
 BEGIN
 	line1 <= word1(to_integer(unsigned(index)));

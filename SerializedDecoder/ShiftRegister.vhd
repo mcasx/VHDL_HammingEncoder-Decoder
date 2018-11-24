@@ -10,7 +10,7 @@ ENTITY ShiftRegister IS
 END ShiftRegister;
 
 ARCHITECTURE behavior OF ShiftRegister IS
-		signal q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11: std_logic;
+		signal q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15: std_logic;
 BEGIN
 	flipFlopDSimul1: storage.flipFlopDSimul
 	port map(
@@ -111,16 +111,52 @@ BEGIN
 		Q => q11
 	);
 	
-	o1 <= q1;
-	o2 <= q2;
-	o3 <= q3;
-	o4 <= q4;
-	o5 <= q5;
-	o6 <= q6;
-	o7 <= q7;
-	o8 <= q8;
-	o9 <= q9;
-	o10 <= q10;
-	o11 <= q11;
+	flipFlopDSimul12: storage.flipFlopDSimul
+	port map(
+		clk => clk,
+		D => q11,
+		nSet => '1',
+		nRst => '1',
+		Q => q12
+	);
+	
+	flipFlopDSimul13: storage.flipFlopDSimul
+	port map(
+		clk => clk,
+		D => q12,
+		nSet => '1',
+		nRst => '1',
+		Q => q13
+	);
+	
+	flipFlopDSimul14: storage.flipFlopDSimul
+	port map(
+		clk => clk,
+		D => q13,
+		nSet => '1',
+		nRst => '1',
+		Q => q14
+	);
+	
+	flipFlopDSimul15: storage.flipFlopDSimul
+	port map(
+		clk => clk,
+		D => q14,
+		nSet => '1',
+		nRst => '1',
+		Q => q15
+	);
+	
+	o1  <= q5;
+	o2  <= q6;
+	o3  <= q7;
+	o4  <= q8;
+	o5  <= q9;
+	o6  <= q10;
+	o7  <= q11;
+	o8  <= q12;
+	o9  <= q13;
+	o10 <= q14;
+	o11 <= q15;
 	
 END behavior;
