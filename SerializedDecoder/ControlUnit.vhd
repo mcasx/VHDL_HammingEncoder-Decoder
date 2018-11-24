@@ -6,7 +6,9 @@ USE ieee.std_logic_1164.all;
 ENTITY ControlUnit IS
     PORT (
         clk: in std_logic;
-        line1, line2, line3, line4, finished: out std_logic
+        line1, line2, line3, line4: out std_logic;
+		  finished: out std_logic;
+		  reset: out std_logic
     );
 END ControlUnit;
 
@@ -65,4 +67,6 @@ BEGIN
 		x => s1
 	);
 	
+	finished <= q1(0) and q1(1) and q1(2) and q1(3);
+	reset <= not q1(0) and not q1(1) and not q1(2) and not q1(3);
 END behavior;
