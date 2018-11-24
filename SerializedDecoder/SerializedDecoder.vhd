@@ -6,6 +6,7 @@ ENTITY SerializedDecoder IS
         y, clk: in std_logic;
         m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11: out std_logic;
 		  d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11: out std_logic;
+		  qin1, qin2, qin3, qin4: out std_logic;
 		  q1, q2, q3, q4: out std_logic;
 		  a_rst: in std_logic;
 		  reset: out std_logic;
@@ -78,9 +79,15 @@ BEGIN
 	xor3: m_xor PORT MAP(s_l3, s_q3, s_d3);
 	xor4: m_xor PORT MAP(s_l4, s_q4, s_d4);
 	
-	reg: Register4Bit PORT MAP(s_d1, s_d2, s_d3, s_d4, clk, s_reset, s_q1, s_q2, s_q3, s_q4);
+	qin1 <= s_d1;
+	qin2 <= s_d2;
+	qin3 <= s_d3;
+	qin4 <= s_d4;
 	
-	decoder: Decoder4to11 PORT MAP(s_q1, s_q2, s_q3, s_q4, s_o1, s_o2, s_o3, s_o4, s_o5, s_o6, s_o7, s_o8, s_o9, s_o10, s_o11);
+										
+	reg: Register4Bit PORT MAP( s_d1, s_d2, s_d3, s_d4, clk, s_reset, s_q1, s_q2, s_q3, s_q4);
+	
+	decoder: Decoder4to11 PORT MAP(s_d1, s_d2, s_d3, s_d4, s_o1, s_o2, s_o3, s_o4, s_o5, s_o6, s_o7, s_o8, s_o9, s_o10, s_o11);
 	
 	shift_reg: ShiftRegister PORT MAP(y, clk, s_shift_o1, s_shift_o2, s_shift_o3, s_shift_o4, s_shift_o5, s_shift_o6, s_shift_o7, s_shift_o8, s_shift_o9, s_shift_o10, s_shift_o11);
 	

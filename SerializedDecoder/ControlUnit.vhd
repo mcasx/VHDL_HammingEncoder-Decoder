@@ -54,7 +54,7 @@ BEGIN
 	
 	memory: decoder.ROM
 	port map(
-		index => s1,
+		index => q1,
 		line1 => line1,
 		line2 => line2,
 		line3 => line3,
@@ -67,6 +67,6 @@ BEGIN
 		x => s1
 	);
 	
-	ready <= q1(0) and q1(1) and q1(2) and q1(3);
+	ready <= not q1(0) and q1(1) and q1(2) and q1(3);
 	reset <= q1(0) and q1(1) and q1(2) and q1(3);
 END behavior;
