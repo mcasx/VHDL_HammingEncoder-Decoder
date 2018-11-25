@@ -31,6 +31,6 @@ BEGIN
 		reset => reset
 	);
 	
-	out_reset <= q1(0) and q1(1) and q1(2) and q1(3);
+	out_reset <= not(q1(0) and q1(1) and q1(2) and q1(3));
 	ready <= not q1(0) and q1(1) and q1(2) and q1(3);
 END behavior;

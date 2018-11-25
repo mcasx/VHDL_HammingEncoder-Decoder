@@ -9,6 +9,7 @@ ENTITY SerializedDecoder IS
 		  d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11: out std_logic;
 		  qin1, qin2, qin3, qin4: out std_logic;
 		  q1, q2, q3, q4: out std_logic;
+		  mline1, mline2, mline3, mline4: out std_logic;
 		  a_rst: in std_logic;
 		  reset: out std_logic;
 		  ready: out std_logic
@@ -30,6 +31,11 @@ BEGIN
 	
 	reset <= s_reset;
 	
+	mline1 <= s_line1;
+	mline2 <= s_line2;
+	mline3 <= s_line3;
+	mline4 <= s_line4;
+	
 	s_l1 <= y and s_line1;
 	s_l2 <= y and s_line2;
 	s_l3 <= y and s_line3;
@@ -50,7 +56,7 @@ BEGIN
 	
 	decode: decoder.Decoder4to11 PORT MAP(s_d1, s_d2, s_d3, s_d4, s_o1, s_o2, s_o3, s_o4, s_o5, s_o6, s_o7, s_o8, s_o9, s_o10, s_o11);
 	
-	shift_reg: decoder.ShiftRegister PORT MAP(y, clk, s_reset, s_shift_o1, s_shift_o2, s_shift_o3, s_shift_o4, s_shift_o5, s_shift_o6, s_shift_o7, s_shift_o8, s_shift_o9, s_shift_o10, s_shift_o11);
+	shift_reg: decoder.ShiftRegister PORT MAP(y, clk, s_shift_o1, s_shift_o2, s_shift_o3, s_shift_o4, s_shift_o5, s_shift_o6, s_shift_o7, s_shift_o8, s_shift_o9, s_shift_o10, s_shift_o11);
 	
 	out_xor1: decoder.m_xor PORT MAP(s_o1, s_shift_o1, m1);
 	out_xor2: decoder.m_xor PORT MAP(s_o2, s_shift_o2, m2);

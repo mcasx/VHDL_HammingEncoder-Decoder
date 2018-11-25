@@ -4,7 +4,7 @@ USE ieee.std_logic_1164.all;
 
 ENTITY ShiftRegister IS
     PORT (
-        m, clk, rst: in std_logic;
+        m, clk: in std_logic;
         o1, o2, o3, o4, o5, o6, o7, o8, o9, o10, o11: out std_logic
     );
 END ShiftRegister;
@@ -17,7 +17,7 @@ BEGIN
 		clk => clk,
 		D => m,
 		nSet => '1',
-		nRst => rst,
+		nRst => '1',
 		Q => q1
 	);
 	
@@ -26,7 +26,7 @@ BEGIN
 		clk => clk,
 		D => q1,
 		nSet => '1',
-		nRst => rst,
+		nRst => '1',
 		Q => q2
 	);
 	
@@ -35,7 +35,7 @@ BEGIN
 		clk => clk,
 		D => q2,
 		nSet => '1',
-		nRst => rst,
+		nRst => '1',
 		Q => q3
 	);
 	
@@ -44,7 +44,7 @@ BEGIN
 		clk => clk,
 		D => q3,
 		nSet => '1',
-		nRst => rst,
+		nRst => '1',
 		Q => q4
 	);
 	
@@ -53,7 +53,7 @@ BEGIN
 		clk => clk,
 		D => q4,
 		nSet => '1',
-		nRst => rst,
+		nRst => '1',
 		Q => q5
 	);
 	
@@ -62,7 +62,7 @@ BEGIN
 		clk => clk,
 		D => q5,
 		nSet => '1',
-		nRst => rst,
+		nRst => '1',
 		Q => q6
 	);
 	
@@ -71,7 +71,7 @@ BEGIN
 		clk => clk,
 		D => q6,
 		nSet => '1',
-		nRst => rst,
+		nRst => '1',
 		Q => q7
 	);
 	
@@ -80,7 +80,7 @@ BEGIN
 		clk => clk,
 		D => q7,
 		nSet => '1',
-		nRst => rst,
+		nRst => '1',
 		Q => q8
 	);
 	
@@ -89,7 +89,7 @@ BEGIN
 		clk => clk,
 		D => q8,
 		nSet => '1',
-		nRst => rst,
+		nRst => '1',
 		Q => q9
 	);
 	
@@ -98,7 +98,7 @@ BEGIN
 		clk => clk,
 		D => q9,
 		nSet => '1',
-		nRst => rst,
+		nRst => '1',
 		Q => q10
 	);
 	
@@ -107,7 +107,7 @@ BEGIN
 		clk => clk,
 		D => q10,
 		nSet => '1',
-		nRst => rst,
+		nRst => '1',
 		Q => q11
 	);
 	
@@ -116,7 +116,7 @@ BEGIN
 		clk => clk,
 		D => q11,
 		nSet => '1',
-		nRst => rst,
+		nRst => '1',
 		Q => q12
 	);
 	
@@ -125,7 +125,7 @@ BEGIN
 		clk => clk,
 		D => q12,
 		nSet => '1',
-		nRst => rst,
+		nRst => '1',
 		Q => q13
 	);
 	
@@ -134,7 +134,7 @@ BEGIN
 		clk => clk,
 		D => q13,
 		nSet => '1',
-		nRst => rst,
+		nRst => '1',
 		Q => q14
 	);
 	
@@ -143,7 +143,7 @@ BEGIN
 		clk => clk,
 		D => q14,
 		nSet => '1',
-		nRst => rst,
+		nRst => '1',
 		Q => q15
 	);
 	
