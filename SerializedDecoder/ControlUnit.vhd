@@ -28,9 +28,9 @@ BEGIN
 	port map(
 		clk => clk,
 		x => q1,
-		reset => reset
+		reset => s_reset
 	);
-	
-	out_reset <= not(q1(0) and q1(1) and q1(2) and q1(3));
+	s_reset <= not(q1(0) and q1(1) and q1(2) and q1(3));
+	out_reset <= s_reset;
 	ready <= not q1(0) and q1(1) and q1(2) and q1(3);
 END behavior;

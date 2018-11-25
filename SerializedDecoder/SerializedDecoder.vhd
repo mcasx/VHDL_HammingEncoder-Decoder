@@ -31,7 +31,7 @@ BEGIN
 	control: decoder.ControlUnit PORT MAP(clk, a_rst, s_line1, s_line2, s_line3, s_line4, ready, s_reset);
 	
 	reset <= s_reset and a_rst;
-	reg_reset <= s_reset;
+	reg_reset <= s_reset and a_rst;
 	
 	mline1 <= s_line1;
 	mline2 <= s_line2;
