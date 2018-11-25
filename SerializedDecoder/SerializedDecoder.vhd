@@ -24,12 +24,14 @@ ARCHITECTURE iterativeFunction OF SerializedDecoder IS
 	signal s_o1, s_o2, s_o3, s_o4, s_o5, s_o6, s_o7, s_o8, s_o9, s_o10, s_o11: std_logic;
 	signal s_shift_o1, s_shift_o2, s_shift_o3, s_shift_o4, s_shift_o5, s_shift_o6, s_shift_o7, s_shift_o8, s_shift_o9, s_shift_o10, s_shift_o11: std_logic;
 	signal s_reset: std_logic;
+	signal reg_reset: std_logic;
 	
 BEGIN
 	
 	control: decoder.ControlUnit PORT MAP(clk, a_rst, s_line1, s_line2, s_line3, s_line4, ready, s_reset);
 	
-	reset <= s_reset;
+	reset <= s_reset and a_rst;
+	reg_reset <= s_reset;
 	
 	mline1 <= s_line1;
 	mline2 <= s_line2;
@@ -52,7 +54,7 @@ BEGIN
 	qin4 <= s_d4;
 	
 										
-	reg: decoder.Register4Bit PORT MAP( s_d1, s_d2, s_d3, s_d4, clk, s_reset, s_q1, s_q2, s_q3, s_q4);
+	reg: decoder.Register4Bit PORT MAP( s_d1, s_d2, s_d3, s_d4, clk, reg_reset, s_q1, s_q2, s_q3, s_q4);
 	
 	decode: decoder.Decoder4to11 PORT MAP(s_d1, s_d2, s_d3, s_d4, s_o1, s_o2, s_o3, s_o4, s_o5, s_o6, s_o7, s_o8, s_o9, s_o10, s_o11);
 	
