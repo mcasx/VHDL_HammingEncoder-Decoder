@@ -21,8 +21,8 @@ BEGIN
 	port map(
 		clk => clk,
 		D => nq1,
-		nSet => reset,
-		nRst => '1',
+		nSet => '1',
+		nRst => reset,
 		Q => x(0),
 		nQ => nq1
 	);
@@ -31,8 +31,8 @@ BEGIN
 	port map(
 		clk => nq1,
 		D => nq2,
-		nSet => reset,
-		nRst => '1',
+		nSet => '1',
+		nRst => reset,
 		Q => x(1),
 		nQ => nq2
 	);
@@ -41,8 +41,8 @@ BEGIN
 	port map(
 		clk => nq2,
 		D => nq3,
-		nSet => reset,
-		nRst => '1',
+		nSet => '1',
+		nRst => reset,
 		Q => x(2),
 		nQ => nq3
 	);
@@ -51,8 +51,8 @@ BEGIN
 	port map(
 		clk => nq3,
 		D => nq4,
-		nSet => reset,
-		nRst => '1',
+		nSet => '1',
+		nRst => reset,
 		Q => x(3),
 		nQ => nq4
 	);

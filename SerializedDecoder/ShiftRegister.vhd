@@ -10,7 +10,7 @@ ENTITY ShiftRegister IS
 END ShiftRegister;
 
 ARCHITECTURE behavior OF ShiftRegister IS
-		signal q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15: std_logic;
+		signal q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14: std_logic;
 BEGIN
 	flipFlopDSimul1: storage.flipFlopDSimul
 	port map(
@@ -138,25 +138,18 @@ BEGIN
 		Q => q14
 	);
 	
-	flipFlopDSimul15: storage.flipFlopDSimul
-	port map(
-		clk => clk,
-		D => q14,
-		nSet => '1',
-		nRst => '1',
-		Q => q15
-	);
 	
-	o11 <= q5;
-	o10 <= q6;
-	o9  <= q7;
-	o8  <= q8;
-	o7  <= q9;
-	o6  <= q10;
-	o5  <= q11;
-	o4  <= q12;
-	o3  <= q13;
-	o2 <= q14;
-	o1 <= q15;
+	
+	o11 <= q4;
+	o10 <= q5;
+	o9  <= q6;
+	o8  <= q7;
+	o7  <= q8;
+	o6  <= q9;
+	o5  <= q10;
+	o4  <= q11;
+	o3  <= q12;
+	o2 <= q13;
+	o1 <= q14;
 	
 END behavior;
